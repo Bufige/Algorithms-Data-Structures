@@ -16,7 +16,7 @@ All projects or exercises about the classes: programming languages 1&amp;2 and d
 
 ## commands:
 
-**dir -> will make all the working directories.**
-**all -> will compile everything and output to main.**
-**doxy -> will make the documentarion for the whole project.**
-**clean -> will clear the bin and doc directories.**
+* > **dir -> will make all the working directories.**
+* > **all -> will compile everything and output to main.**
+* > **doxy -> will make the documentarion for the whole project.**
+* > **clean -> will clear the bin and doc directories.**
