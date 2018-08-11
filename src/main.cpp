@@ -9,16 +9,19 @@
 #include "queue.h"
 #include "stack.h"
 #include "array.h"
+#include "searching.h"
 
 
 void test_containers();
 void test_sort_algorithms();
+void test_searching_algorithms();
 
 
 int main()
 {
 	test_containers();
 	test_sort_algorithms();
+	test_searching_algorithms();
 	return 0;
 }
 
@@ -81,7 +84,6 @@ void test_containers()
 		s1.pop();
 		s2.pop();
 	}
-
 }
 
 void test_sort_algorithms()
@@ -135,4 +137,27 @@ void test_sort_algorithms()
 	}
 	std::cout << std::endl;
 
+}
+
+
+void test_searching_algorithms()
+{
+	std::cout << "\n\n-----SEARCHING TESTING-----" << std::endl;
+	std::vector<int> searching_v = {1,2,4,5,88,-50,33,-22,134,-99,-5555,102};
+	
+	auto found = custom::lsearch(searching_v.begin(),searching_v.end(), -22);
+
+	if(found != searching_v.end())
+		std::cout << "Linear search: " << *found << std::endl;
+	else
+		std::cout << "Linear search: " << "not found" << std::endl;	
+
+	custom::merge_sort<int>(searching_v.begin(),searching_v.end());
+
+	found = custom::bsearch(searching_v.begin(),searching_v.end(), 33);
+
+	if(found != searching_v.end())
+		std::cout << "Binary search: " << *found << std::endl;
+	else
+		std::cout << "Binary search: " << "not found" << std::endl;
 }
