@@ -9,8 +9,8 @@ All projects or exercises about the classes: programming languages 1&amp;2 and d
 - [x] [Queue](/include/queue.h)
 - [x] [Stack](/include/stack.h)
 - [x] [Array](/include/array.h)
-- [x] [Common sorting algorithms such as](/include/sort.h.h) : **bubble sort**, **seletion sort**, **insertion sort**, **quick sort** and **merge sort**.
-- [x] [Common searching algorithms such as](/include/search.h.h): **linear search** and **binary search**.
+- [x] [Common sorting algorithms such as](/include/sort.h) : **bubble sort**, **seletion sort**, **insertion sort**, **quick sort** and **merge sort**.
+- [x] [Common searching algorithms such as](/include/search.h): **linear search** and **binary search**.
 
 
 # 3. Makefile/Compiling:
