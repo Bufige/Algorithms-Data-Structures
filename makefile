@@ -15,19 +15,21 @@ SRC_EXT = cpp
 
 
 # command to make the terminal clear.
-.SILENT: clean doxy
+.SILENT: clean doxy dir
 
 # compiler flags 
 COMPILER_FLAGS = -std=c++11 -Wall
 
 # for later testings
 # OS flag \
-OS := $(shell uname) \
-windows flag \
-ifeq ($(OS),Windows_NT) \
-else \
-	ifeq ($(OS),Linux) \
-	endif \
+OS := $(shell uname)
+ifeq ($(OS),Windows_NT)
+	# temporary... windows #@!#$%%#%$%¨%$#$#@$%¨&%%#
+	RM = rm -rf
+else
+	ifeq ($(OS),Linux)
+		RM = rm -rf
+	endif
 endif
 
 # command  to compile the code 
@@ -36,24 +38,40 @@ all:
 
 #command to create working directories 
 dir:
-	@echo "creating directories"
-	@mkdir $(INCLUDE_PATH)
-	@mkdir $(SRC_PATH)
-	@mkdir $(BIN_PATH)
-	@mkdir $(DOC_PATH)
+	@echo "Creating directories..."
+	if [ ! -d "./$(INCLUDE_PATH)" ];then  \
+		mkdir $(INCLUDE_PATH); \
+	fi	
+	if [ ! -d "./$(SRC_PATH)" ];then  \
+		mkdir $(SRC_PATH); \
+	fi	
+	if [ ! -d "./$(BIN_PATH)" ];then  \
+		mkdir $(BIN_PATH); \
+	fi	
+	if [ ! -d "./$(DOC_PATH)" ];then  \
+		mkdir $(DOC_PATH); \
+	fi		
 
 doxy:
-	rmdir /s /q $(DOC_PATH)
-	@mkdir $(DOC_PATH)
+	@echo "Making documentation..."
+	if [ -d "./$(DOC_PATH)" ];then  \
+		$(RM) -rf $(DOC_PATH); \
+	fi
+	if [ ! -d "./$(DOC_PATH)" ];then  \
+		mkdir $(DOC_PATH); \
+	fi
 	doxygen Doxyfile
 
 # command to clean the binaries 
 clean:
-# windows clean
-	rmdir /s /q $(BIN_PATH)
-	rmdir /s /q $(DOC_PATH)
-	@mkdir $(BIN_PATH)
-	@mkdir $(DOC_PATH)
+	@echo "Deleting directories."
+	if [ -d "./$(BIN_PATH)" ];then  \
+		$(RM) $(BIN_PATH); \
+	fi
+	if [ -d "./$(DOC_PATH)" ];then  \
+		$(RM) $(DOC_PATH); \
+	fi
+
 # linux clean
 # rm -rf $(BIN_PATH)/*
 # rm -rf $(DOC_PATH)/*
