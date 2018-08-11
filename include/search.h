@@ -1,5 +1,5 @@
 /** 
- *  @file    searching.h
+ *  @file    search.h
  *  @author  Leonardo Igor de Oliveira Cavalcante (https://github.com/bufige, a.k.a, bufige)
  *  @date    11/08/2018  
  *  @version 1.0 
@@ -23,8 +23,8 @@
 
 
 
-#ifndef SEARCHING_H
-#define SEARCHING_H
+#ifndef SEARCH_H
+#define SEARCH_H
 
 
 namespace custom

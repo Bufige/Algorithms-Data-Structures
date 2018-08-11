@@ -9,7 +9,7 @@
 #include "queue.h"
 #include "stack.h"
 #include "array.h"
-#include "searching.h"
+#include "search.h"
 
 
 void test_containers();
