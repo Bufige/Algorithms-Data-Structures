@@ -187,7 +187,7 @@ namespace custom
  				}
 			}
 	};
-};
+}
 template<class T, int sz> custom::array<T,sz>::array()
 {
 	//init our variables.

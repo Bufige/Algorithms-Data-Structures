@@ -84,7 +84,7 @@ namespace custom
 		}
 		return last;
 	}
-};
+}
 
 
 #endif

@@ -124,7 +124,7 @@ namespace custom
 		{
 			Node * tmp = new Node;
 			tmp->data = data;
-			tmp->next = NULL;
+			tmp->next = nullptr;
 			return tmp;
 		}
 		void clear();
@@ -132,14 +132,14 @@ namespace custom
 		std::size_t _size;
 	};
 	
-};
+}
 
 
 
 
 template<class T> custom::queue<T>::queue()
 {
-	this->head = this->tail = NULL;
+	this->head = this->tail = nullptr;
 	this->_size = 0;
 }
 template<class T> custom::queue<T>::~queue()
@@ -150,13 +150,13 @@ template<class T> custom::queue<T>::~queue()
 template<class T> bool custom::queue<T>::empty()
 {
 	//if the head is null, therefore the queue is empty.
-	return this->head == NULL;
+	return this->head == nullptr;
 }
 
 template<class T> void custom::queue<T>::push(const T& data)
 {
 	Node * nnode = new_node(data);
-	if (!nnode) // can't allocate memory
+	if (nnode == nullptr) // can't allocate memory
 		return ;
 	//it is empty?
 	if (this->empty())
@@ -193,7 +193,7 @@ template<class T> void custom::queue<T>::pop()
 		if(this->_size == 0)
 		{
 			// reset head and tail.
-			this->head = this->tail = NULL;
+			this->head = this->tail = nullptr;
 		}
 	}
 }
@@ -206,7 +206,7 @@ template<class T> void custom::queue<T>::clear()
 		this->pop();
 	}
 	//reset the pointers.
-	this->head = this->tail = NULL;
+	this->head = this->tail = nullptr;
 	//reset the number of elements.
 	this->_size = 0;
 }

@@ -145,7 +145,7 @@ template<class T, class Iterator> void merge_sort(Iterator first, T b[], std::si
  * @tparam     T         type
  * @tparam     Iterator  iterator
  */
-};
+}
 /**
  * @brief       bubble sort algoritmh.
  *
@@ -258,5 +258,5 @@ template<class T, class Iterator> void merge_sort(Iterator first, Iterator last)
 	// delete array.
 	delete[] b;
 }
-};
+}
 #endif

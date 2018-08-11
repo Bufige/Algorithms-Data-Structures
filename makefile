@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := all
 
 # compiler used.
-COMPILER = g++
+COMPILER := g++
 
 # path of the files 
 INCLUDE_PATH = include
@@ -28,7 +28,13 @@ SRC_EXT = cpp
 .SILENT: clean doxy dir
 
 # compiler flags 
-COMPILER_FLAGS = -std=c++11 -Wall
+# Wall - enables some set of warnings
+# Wextra - enables some more warnings
+# Werror - make all warnings into errors.
+# Wpedantic - issues all the warnings demanded by ISO C and ISO c++.
+# Basically, reject everything that is not standard. Makes porting for other compiles, easier. 
+# pedantic-errors -  tell to the compiler to give errors whatever the standard is not followed.
+COMPILER_FLAGS = -std=c++11 -O2 -Wpedantic -Wall -Wextra -Werror -pedantic-errors
 
 # for later testings
 # OS flag

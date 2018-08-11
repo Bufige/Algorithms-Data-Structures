@@ -138,7 +138,7 @@ namespace custom
 		{
 			Node * tmp = new Node;
 			tmp->data = data;
-			tmp->next = tmp->prev = NULL;
+			tmp->next = tmp->prev = nullptr;
 			return tmp;
 		}
 		void clear();
@@ -146,12 +146,12 @@ namespace custom
 		std::size_t _size;
 	};
 	
-};
+}
 
 
 template<class T> custom::stack<T>::stack() 
 {
-	this->head = this->tail = NULL;
+	this->head = this->tail = nullptr;
 	this->_size = 0;
 }
 
@@ -164,13 +164,13 @@ template<class T> custom::stack<T>::~stack()
 template<class T> bool custom::stack<T>::empty()
 {
 	//if the head is null, therefore the stack is empty.
-	return this->head == NULL;
+	return this->head == nullptr;
 }
 
 template<class T> void custom::stack<T>::push(const T& data)
 {
 	Node * nnode = new_node(data);
-	if (!nnode) // can't allocate memory
+	if (nnode == nullptr) // can't allocate memory
 		return ;
 	//it is empty?
 	if (this->empty())
@@ -209,7 +209,7 @@ template<class T> void custom::stack<T>::pop()
 		if(this->_size == 0)
 		{
 			// reset head and tail.
-			this->head = this->tail = NULL;
+			this->head = this->tail = nullptr;
 		}
 	}
 }
@@ -222,7 +222,7 @@ template<class T> void custom::stack<T>::clear()
 		this->pop();
 	}
 	//reset the pointers.
-	this->head = this->tail = NULL;
+	this->head = this->tail = nullptr;
 	//reset the number of elements.
 	this->_size = 0;
 }
