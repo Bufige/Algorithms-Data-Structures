@@ -9,8 +9,8 @@ All projects or exercises about the classes: programming languages 1&amp;2 and d
 - [x] Queue
 - [x] Stack
 - [x] Array
-- [x] Common sorting algorithms such as : bubble sort, seletion sort, insertion sort, quick sort and merge sort.
-- [x] Common searching algorithms such as: linear search and binary search.
+- [x] Common sorting algorithms such as : **bubble sort**, **seletion sort**, **insertion sort**, **quick sort** and **merge sort**.
+- [x] Common searching algorithms such as: **linear search** and **binary search**.
 
 
 # 3. Makefile/Compiling:
