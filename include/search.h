@@ -54,6 +54,23 @@ namespace custom
 			return a < b ? a : a;
 		}
 
+		template<class Iterator, class Value> Iterator lower_bound(Iterator first, Iterator last, const Value& value )
+		{
+			Iterator mid;
+			while(last > first)
+			{
+				mid = (first + ((last-first)/2));
+				if(value > *mid)
+				{
+					first = mid + 1;
+				}
+				else
+				{
+					last = mid;
+				}
+			}
+			return first;
+		}
 
 		template<class Iterator, class Value> Iterator _bsearch(Iterator first, Iterator last,const Value& value)
 		{
@@ -344,8 +361,14 @@ namespace custom
 	{
 		std::size_t n = (last-first) - 1,k = 0;
 		// position of the first fib bigger than n.
+		
+		// otimization.
+		const std::size_t * lb = lower_bound(fib, fib + (sizeof(fib)/sizeof(fib[0])), n);		
+		k = (lb == (fib + (sizeof(fib)/sizeof(fib[0]))) ? (lb-1) : (lb)) - fib;
+		/*
 		while(n > fib[k])
 			++k;
+		*/
 		Iterator mid, tmp = last;
 		// while in the interval
 		while(first <= tmp)
@@ -353,7 +376,7 @@ namespace custom
 			// length of the interval
 			n = tmp - first;
 
-			// we get the mid based on the fibonacci series. the min is a "supposed speed up". why? let's say, the fib number is bigger than the current segment? if it is, i set the current segment as the mid.
+			// we get the mid based on the fibonacci series. the min is a "supposed speed up". why? let's say, the fib number is bigger than the current segment? if it is, i set mid as the size of the segment.
 			mid = (first + (min(fib[k-1] - 1, n)));
 			// we found.
 			if(*mid == value)

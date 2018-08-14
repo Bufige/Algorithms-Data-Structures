@@ -50,7 +50,7 @@ endif
 
 # command to compile the code, if no folder is created it will try to create them and make a simple starting setup.
 all: dir 
-	$(COMPILER) $(COMPILER_FLAGS) $(SRC_PATH)/*.$(SRC_EXT) -o $(BIN_PATH)/$(EXE_NAME) -I $(INCLUDE_PATH)
+	$(COMPILER) $(COMPILER_FLAGS) $(SRC_PATH)/*.$(SRC_EXT) -o $(BIN_PATH)/$(EXE_NAME) -I $(INCLUDE_PATH) ${args}
 
 #command to create working directories 
 dir :

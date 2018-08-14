@@ -10,7 +10,7 @@ All projects or exercises about the classes: programming languages 1&amp;2 and d
 - [x] [Stack](/include/stack.h)
 - [x] [Array](/include/array.h)
 - [x] [Common sorting algorithms such as](/include/sort.h) : **bubble sort**, **seletion sort**, **insertion sort**, **quick sort** and **merge sort**.
-- [x] [Common searching algorithms such as](/include/search.h): **linear search** and **binary search**.
+- [x] [Common searching algorithms such as](/include/search.h): **linear search**,**binary search**, **ternary search**, **jump search** and **fibonacci search**.
 
 
 # 3. Makefile/Compiling:
@@ -20,6 +20,11 @@ Will check if the setup is configured, if not, it will make a new setup by calli
 
 ```
 make
+```
+
+You can also pass arguments to the compiler. Example below.
+```
+make args="-D something=212"
 ```
 
 will make all the working directories. You can do this manually or it will do automatically if you use make.

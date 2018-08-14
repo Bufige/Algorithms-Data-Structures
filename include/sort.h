@@ -250,11 +250,8 @@ template<class T, class Iterator> void quick_sort(Iterator first, Iterator last)
  * @brief      merge function from merge sort
  *
  * @param[in]  first     pointing to the beggining.
- * @param      b         array hold the temporary values.
- * @param[in]  low       The low index
- * @param[in]  mid       The middle index
- * @param[in]  high      The high index
- *
+ * @param[in]  last     pointing to the end.
+ * 
  * @tparam     T          type
  * @tparam     Iterator  iterator
  */
