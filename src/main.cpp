@@ -157,17 +157,32 @@ void test_searching_algorithms()
 	found = custom::bsearch(searching_v.begin(),searching_v.end(), 33);
 
 	if(found != searching_v.end())
-		std::cout << "Binary search: " << *found << std::endl;
+		std::cout << "Binary search iterative: " << *found << std::endl;
 	else
-		std::cout << "Binary search: " << "not found" << std::endl;
+		std::cout << "Binary search iterative: " << "not found" << std::endl;
 
+
+	found = custom::bsearchR(searching_v.begin(),searching_v.end(), 33);
+
+	if(found != searching_v.end())
+		std::cout << "Binary search recursive: " << *found << std::endl;
+	else
+		std::cout << "Binary search recursive: " << "not found" << std::endl;
 
 	found = custom::tsearch(searching_v.begin(),searching_v.end(), 33);
 
 	if(found != searching_v.end())
-		std::cout << "Ternary search: " << *found << std::endl;
+		std::cout << "Ternary search iterative: " << *found << std::endl;
 	else
-		std::cout << "Ternary search: " << "not found" << std::endl;
+		std::cout << "Ternary search iterative: " << "not found" << std::endl;
+
+	found = custom::tsearchR(searching_v.begin(),searching_v.end(), 33);
+
+	if(found != searching_v.end())
+		std::cout << "Ternary search recursive: " << *found << std::endl;
+	else
+		std::cout << "Ternary search recursive: " << "not found" << std::endl;
+
 
 
 	found = custom::jsearch(searching_v.begin(),searching_v.end(), 102);
@@ -176,4 +191,13 @@ void test_searching_algorithms()
 		std::cout << "Jump search: " << *found << std::endl;
 	else
 		std::cout << "Jump search: " << "not found" << std::endl;
+
+
+	found = custom::fsearch(searching_v.begin(),searching_v.end(), 88);
+
+	if(found != searching_v.end())
+		std::cout << "Fibonacci search: " << *found << std::endl;
+	else
+		std::cout << "Fibonacci search: " << "not found" << std::endl;
+
 }
