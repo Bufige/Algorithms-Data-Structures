@@ -160,4 +160,20 @@ void test_searching_algorithms()
 		std::cout << "Binary search: " << *found << std::endl;
 	else
 		std::cout << "Binary search: " << "not found" << std::endl;
+
+
+	found = custom::tsearch(searching_v.begin(),searching_v.end(), 33);
+
+	if(found != searching_v.end())
+		std::cout << "Ternary search: " << *found << std::endl;
+	else
+		std::cout << "Ternary search: " << "not found" << std::endl;
+
+
+	found = custom::jsearch(searching_v.begin(),searching_v.end(), 102);
+
+	if(found != searching_v.end())
+		std::cout << "Jump search: " << *found << std::endl;
+	else
+		std::cout << "Jump search: " << "not found" << std::endl;
 }
