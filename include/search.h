@@ -51,7 +51,7 @@ namespace custom
 		// min function
 		template <class T> const T& min(const T& a, const T& b)
 		{
-			return a < b ? a : a;
+			return a > b ? b : a;
 		}
 
 		template<class Iterator, class Value> Iterator lower_bound(Iterator first, Iterator last, const Value& value )
@@ -316,17 +316,14 @@ namespace custom
 		sqrtN = sqrt(n);
 		prev = step = sqrtN;
 		// while the postion we are is lesser than the value, we make jumps.
-		while(value > *(first + (min(step, n) - 1)))
+		while(prev < n && value > *(first + (min(step, n) - 1)))
 		{
 			prev = step;
 			step += sqrtN;
-			if(prev >= n)
-			{
-				return last;
-			}
 		}
+		
 		//do a linear search for the block.
-		while(value > *(first + prev))
+		while(prev < n && value > *(first + prev))
 		{
 			++prev;
 			//block is ended. therefore, ther evalue is not in the array.
@@ -337,7 +334,7 @@ namespace custom
 			}
 		}
 		//found?
-		if(*(first + prev) == value)
+		if(prev < n && *(first + prev) == value)
 		{
 			return (first + prev);
 		}
