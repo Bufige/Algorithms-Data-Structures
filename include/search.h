@@ -360,12 +360,12 @@ namespace custom
 		// position of the first fib bigger than n.
 		
 		// otimization.
-		const std::size_t * lb = lower_bound(fib, fib + (sizeof(fib)/sizeof(fib[0])), n);		
+		/*const std::size_t * lb = lower_bound(fib, fib + (sizeof(fib)/sizeof(fib[0])), n);		
 		k = (lb == (fib + (sizeof(fib)/sizeof(fib[0]))) ? (lb-1) : (lb)) - fib;
-		/*
+		*/
 		while(n > fib[k])
 			++k;
-		*/
+	
 		Iterator mid, tmp = last;
 		// while in the interval
 		while(first <= tmp)
@@ -374,7 +374,7 @@ namespace custom
 			n = tmp - first;
 
 			// we get the mid based on the fibonacci series. the min is a "supposed speed up". why? let's say, the fib number is bigger than the current segment? if it is, i set mid as the size of the segment.
-			mid = (first + (min(fib[k-1] - 1, n)));
+			mid = (first + fib[k-1] - 1);
 			// we found.
 			if(*mid == value)
 			{
